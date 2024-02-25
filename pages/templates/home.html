@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Countdown</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{% static 'script.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'stylesheet.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+        <noscript>
+            <META HTTP-EQUIV="Refresh" CONTENT="0;URL=error.html">
+        </noscript>
+    </head>
+    <body>
+        <header>
+            <h1>Countdown Solver (beta)</h1>
+            <p>This program returns the shortest solution(s) only. Superfluous solutions are also filtered out, such as solutions which are equivalent (up to commutativity and associativity) to a solution already found.</p>
+        </header>
+        <article>
+            <form id="countdown" autocomplete="off">
+                <label for="num1"><b>Numbers</b></label>
+                <input type="number" value="3" min="1" max="100" class="dcp" name="number1" id="number1" placeholder = "Number" style='width:6em' required>
+                <input type="number" value="6" min="1" max="100" class="dcp" name="number2" id="number2" placeholder = "Number" style='width:6em' required><br>
+                <input type="number" value="25" min="1" max="100" class="dcp" name="number3" id="number3" placeholder = "Number" style='width:6em' required>
+                <input type="number" value="50" min="1" max="100" class="dcp" name="number4" id="number4" placeholder = "Number" style='width:6em' required><br>
+                <input type="number" value="75" min="1" max="100" class="dcp" name="number5" id="number5" placeholder = "Number" style='width:6em' required>
+                <input type="number" value="100" min="1" max="100" class="dcp" name="number6" id="number6" placeholder = "Number" style='width:6em' required><br><br>
+                <label for="target"><b>Target</b></label>
+                <input type="number" value="952" min="1" max="1000" name="target" id="target" placeholder="Target" style='width:6em' required><br><br>
+                <label for="shortest"><input type="checkbox" id="shortest" name="shortest" checked>Only return the shortest solution(s)</label>
+                <button type="submit" class="button-4" role="button">Calculate</button><br><br>
+            </form>
+            <div class="modal"></div>
+            <div id="result"></div>
+        </article>
+        <footer>
+            <p><a href="mailto:ob296@cantab.ac.uk">Contact</a></p>
+        </footer>
+    </body>
+</html>
